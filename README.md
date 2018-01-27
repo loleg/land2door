@@ -1,26 +1,11 @@
-Blemmy
+Land2Door
 =====================
 
-An experimental site developed by [datalets,ch](http://datalets.ch) using the open source, [Django](https://www.djangoproject.com/)-based [Wagtail CMS](http://wagtail.io). 
+Build data on producers & open this information to consumers to develop the direct selling model in Switzerland.
 
-This project is open source under the [MIT License](LICENSE.md). See [Development environment](#development-environment) to get started, and [Contributing](#contributing) for ways to plug into this project.
+https://hack.opendata.ch/project/141
 
-# Blemmy?
-
-Blemmy[*](#why-blemmy) is a headless CMS (Content Management System) in Python which uses the [Wagtail](http://wagtail.io) backend.
-
-A headless CMS does not use a templating engine, since no HTML pages are created directly in the application. Content is provided through serving data types like JSON or XML through a RESTful API. This API is then consumed "somewhere else" (a single page JavaScript application, mobile app, or even another Web application acting as a proxy) as a data source, transforming the content into web pages or mobile app views, or anything else you can imagine.
-
-Some advantages of a Headless CMS include:
-
-- Strongly decoupling data from views, which through a simpler architecture can lead to better security and performance.
-- Frontend developers may use whatever tools and libraries they deem best without being forced to deal with backend application logic.
-- Application developers can focus on rich content delivery, instead of wrestling with front end frameworks and libraries.
-- Many different applications can hook into your backend without additional configuration. Your website is a capable, flexible source of data - for devices such as smartphones or tablets, or any other downstream uses.
-
-## How this works
-
-At this time Blemmy only does one thing. It serves an 'Article' model, instances of which can be managed and organised through the Wagtail admin interface by authenticated users. A flexible API is immediately generated, so that the content can be explored in a web browser or REST tool, the data downloaded or referenced in a frontend using JSON or XML endpoints.
+This project is open source under the [MIT License](LICENSE.md). It was made with [Blemmy](https://github.com/datalets/blemmy), a headless CMS based on [Wagtail](https://wagtail.io).
 
 # Development environment
 
@@ -101,7 +86,7 @@ You can also check out the code for any _TODO_ comments.
 - add a GraphQL query API.
 - add support for Puput's blog models.
 - add other new model types and serialisers (check [Django REST Framework](http://www.django-rest-framework.org/) docs for how to do this. It's easy.), looking at other headless CMS designs for inspiration or standards.
-- allow creation of new pages by POSTing JSON data to the correct endpoint. 
+- allow creation of new pages by POSTing JSON data to the correct endpoint.
 
 ## More links
 
