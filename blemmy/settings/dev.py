@@ -17,14 +17,22 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'blemmy-dev.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blemmy',
+        'USER': 'blemmy',
+        'PASSWORD': 'blemmy',
+        'HOST': 'postgres',
+        'PORT': '5432',
+
+    },
 }
+
 
 env = os.environ.copy()
 if 'ALLOWED_HOSTS' in env:
     ALLOWED_HOSTS = env['ALLOWED_HOSTS'].split(',')
+else:
+    ALLOWED_HOSTS = ['*']  # not in production!
 
 try:
     from .local import *
