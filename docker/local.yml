@@ -20,6 +20,21 @@ services:
       - "8000:8000"
     command: /start.sh
 
+  django-sqlite:
+    build:
+      context: ..
+      dockerfile: ./docker/local/Dockerfile
+    volumes:
+      - ..:/app
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_USER=blemmy
+      - USE_DOCKER=yes
+    ports:
+      - "8000:8000"
+    command: /start-sqlite.sh
+
   postgres:
     build:
       context: ./postgres/
