@@ -14,6 +14,10 @@ COPY ./docker/local/start.sh /start.sh
 RUN sed -i 's/\r//' /start.sh
 RUN chmod +x /start.sh
 
+COPY ./docker/local/start.sh /start-sqlite.sh
+RUN sed -i 's/\r//' /start-sqlite.sh
+RUN chmod +x /start-sqlite.sh
+
 WORKDIR /app
 
 ENTRYPOINT ["/entrypoint.sh"]

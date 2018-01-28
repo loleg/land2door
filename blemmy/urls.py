@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^django-admin/', include(admin.site.urls)),
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^csv/', include('openfarms.urls', namespace='csv')),
     url(r'', include(wagtail_urls)),
 ]
 
