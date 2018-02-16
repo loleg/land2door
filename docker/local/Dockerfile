@@ -1,0 +1,23 @@
+FROM python:3.6
+
+ENV PYTHONUNBUFFERED 1
+
+# Requirements have to be pulled and installed here, otherwise caching won't work
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+COPY ./docker/local/entrypoint.sh /entrypoint.sh
+RUN sed -i 's/\r//' /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+COPY ./docker/local/start.sh /start.sh
+RUN sed -i 's/\r//' /start.sh
+RUN chmod +x /start.sh
+
+COPY ./docker/local/start.sh /start-sqlite.sh
+RUN sed -i 's/\r//' /start-sqlite.sh
+RUN chmod +x /start-sqlite.sh
+
+WORKDIR /app
+
+ENTRYPOINT ["/entrypoint.sh"]

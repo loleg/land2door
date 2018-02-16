@@ -1,0 +1,1517 @@
+[
+{
+    "model": "home.contactformfield",
+    "pk": 1,
+    "fields": {
+        "sort_order": 0,
+        "label": "Name / Nom",
+        "field_type": "singleline",
+        "required": true,
+        "choices": "",
+        "default_value": "",
+        "help_text": "",
+        "page": 5
+    }
+},
+{
+    "model": "home.contactformfield",
+    "pk": 2,
+    "fields": {
+        "sort_order": 1,
+        "label": "Place / Lieu",
+        "field_type": "singleline",
+        "required": true,
+        "choices": "",
+        "default_value": "",
+        "help_text": "",
+        "page": 5
+    }
+},
+{
+    "model": "openfarms.datasource",
+    "pk": 1,
+    "fields": {
+        "title": "BioSuisse",
+        "homepage": "http://www.fermebourgeon.ch",
+        "feed": "",
+        "notes": ""
+    }
+},
+{
+    "model": "openfarms.datasource",
+    "pk": 2,
+    "fields": {
+        "title": "Marche Paysan",
+        "homepage": "http://www.marchepaysan.ch/site/fr/trouver-un-producteur/par-geolocalisation/",
+        "feed": "",
+        "notes": ""
+    }
+},
+{
+    "model": "openfarms.label",
+    "pk": 1,
+    "fields": {
+        "title": "IP-SUISSE",
+        "about": "IP-SUISSE s\u2019investit pour une agriculture suisse \u00e9gologique et \u00e9conomique. Le but principal est une production d\u2019aliments sains et de qualit\u00e9 qui peuvent \u00eatre commercialis\u00e9 \u00e0 des prix \u00e9quitables. Les exploitations IP-SUISSE doivent pouvoir vivre de leur travail et \u00eatre r\u00e9compens\u00e9es pour leurs efforts en mati\u00e8re de protection de l\u2019environnement et en faveur de la biodiversit\u00e9.",
+        "homepage": "https://ipsuisse.ch/",
+        "imageurl": "https://ipsuisse.ch/Design/IPSuisseWebsite/img/SchweizNatuerlich.png"
+    }
+},
+{
+    "model": "openfarms.label",
+    "pk": 2,
+    "fields": {
+        "title": "AOP",
+        "about": "App\u00e9lation d'origine prot\u00e9g\u00e9e",
+        "homepage": "http://www.aop-igp.ch/",
+        "imageurl": "http://www.aop-igp.ch/_upl/images/AOP_LOGO.png"
+    }
+},
+{
+    "model": "openfarms.label",
+    "pk": 4,
+    "fields": {
+        "title": "ProSpecieRara",
+        "about": "ProSpecieRara est une fondation suisse \u00e0 but non lucratif. Elle a \u00e9t\u00e9 fond\u00e9e en 1982 pour pr\u00e9server les races d'animaux de rente et les plantes de culture menac\u00e9es d'extinction",
+        "homepage": "https://www.prospecierara.ch/",
+        "imageurl": "https://www.prospecierara.ch/Skins/Desktop/Images/LogoCHfr.png"
+    }
+},
+{
+    "model": "openfarms.region",
+    "pk": 1,
+    "fields": {
+        "title": "Vaud",
+        "imageurl": ""
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 1,
+    "fields": {
+        "title": "C\u00e9r\u00e9ales",
+        "info": "",
+        "imageurl": "",
+        "parent": []
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 2,
+    "fields": {
+        "title": "Pomme de terre",
+        "info": "",
+        "imageurl": "",
+        "parent": [
+            3
+        ]
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 3,
+    "fields": {
+        "title": "L\u00e9gumes",
+        "info": "",
+        "imageurl": "",
+        "parent": [
+            2
+        ]
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 4,
+    "fields": {
+        "title": "Fruits",
+        "info": "",
+        "imageurl": "",
+        "parent": []
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 5,
+    "fields": {
+        "title": "Charcuterie",
+        "info": "",
+        "imageurl": "",
+        "parent": []
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 6,
+    "fields": {
+        "title": "produit laitier",
+        "info": "",
+        "imageurl": "",
+        "parent": []
+    }
+},
+{
+    "model": "openfarms.category",
+    "pk": 7,
+    "fields": {
+        "title": "produits carn\u00e9s",
+        "info": "",
+        "imageurl": "https://www.google.ch/imgres?imgurl=http%3A%2F%2Fwww.pieuvre.ca%2Fwp-content%2Fuploads%2F2017%2F03%2Fsteak.jpg&imgrefurl=http%3A%2F%2Fwww.pieuvre.ca%2F2017%2F03%2F23%2Fy-a-t-il-4500-litres-deau-dans-v",
+        "parent": []
+    }
+},
+{
+    "model": "openfarms.farm",
+    "pk": 1,
+    "fields": {
+        "title": "Ferme Reymond",
+        "about": "<p>Table\nd\u2019h\u00f4tes\n, Fromage\nau lait\ncru , Charcuterie, Panier\nGourmand.</p>",
+        "image": 1,
+        "person": "Nathalie et JeanDaniel Reymond",
+        "phone": "021 807 31 18",
+        "mobile": "+41 79 787 89 86",
+        "email": "",
+        "website": "http://www.gitereymond.ch",
+        "address": "Rue Saint Laurent 30, 1176 Saint Livres",
+        "longitude": "",
+        "latitude": "",
+        "updated": "2017-07-24T13:54:17.958Z",
+        "published": "2017-07-21T10:03:58.318Z",
+        "is_producer": true,
+        "region": 1,
+        "datasource": null,
+        "distributors": [
+            1
+        ],
+        "labels": [
+            1
+        ]
+    }
+},
+{
+    "model": "openfarms.farm",
+    "pk": 2,
+    "fields": {
+        "title": "Alpage de la petite dent",
+        "about": "Fromage mi dur, tomme de vache, Cochon d'alpage",
+        "image": 3,
+        "person": "Fuchs Patrick et Aude",
+        "phone": "021 843 08 06",
+        "mobile": "",
+        "email": "patrick-aude@bluewin.ch",
+        "website": "",
+        "address": "Route de la vall\u00e9e 3, 1325 Vaulion",
+        "longitude": "",
+        "latitude": "",
+        "updated": "2017-07-24T13:34:27.166Z",
+        "published": "2017-07-23T10:27:24.446Z",
+        "is_producer": true,
+        "region": 1,
+        "datasource": 2,
+        "distributors": [
+            2
+        ],
+        "labels": []
+    }
+},
+{
+    "model": "openfarms.farm",
+    "pk": 3,
+    "fields": {
+        "title": "La ferme de Pr\u00e9 Martin",
+        "about": "Agneau entier ou demi, merguez, viande hach\u00e9e, gigots, c\u00f4telettes, rago\u00fbts,\u00a0fricass\u00e9e, saucissons secs au poivre, \u00e0 la prune ou \u00e0 l'ail, terrines au poivre ou \u00e0 l'ail,\u00a0laine. Jus de pomme.",
+        "image": 4,
+        "person": "Bovy Etienne",
+        "phone": "022 368 20 34",
+        "mobile": "079 578 71 85",
+        "email": "info@fermepremartin.ch",
+        "website": "http://www.fermepremartin.ch",
+        "address": "Ferme Pr\u00e9 Martin 6, 1261 Longirod",
+        "longitude": "",
+        "latitude": "",
+        "updated": "2017-07-24T13:33:50.964Z",
+        "published": "2017-07-23T12:20:43.439Z",
+        "is_producer": true,
+        "region": 1,
+        "datasource": 2,
+        "distributors": [
+            3
+        ],
+        "labels": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "openfarms.farm",
+    "pk": 4,
+    "fields": {
+        "title": "Les jardins du Flon",
+        "about": "Livraison de paniers de fruits et l\u00e9gumes\u00a0de saison",
+        "image": 8,
+        "person": "",
+        "phone": "",
+        "mobile": "",
+        "email": "",
+        "website": "",
+        "address": "",
+        "longitude": "",
+        "latitude": "",
+        "updated": "2017-07-24T13:55:02.743Z",
+        "published": "2017-07-23T13:21:15.942Z",
+        "is_producer": false,
+        "region": 1,
+        "datasource": 2,
+        "distributors": [],
+        "labels": [
+            1
+        ]
+    }
+},
+{
+    "model": "openfarms.farm",
+    "pk": 5,
+    "fields": {
+        "title": "Domaine de la Rapille",
+        "about": "<p>Serge Kursner, sp\u00e9cialis\u00e9 dans l'\u00e9levage caprin depuis plus de 20ans : fromages de Ch\u00e8vre et Cabris.</p>",
+        "image": 10,
+        "person": "Domaine de La Rapille, Serge Kursner",
+        "phone": "",
+        "mobile": "",
+        "email": "",
+        "website": "",
+        "address": "",
+        "longitude": "",
+        "latitude": "",
+        "updated": "2017-07-25T14:02:44.498Z",
+        "published": "2017-07-25T13:56:26.854Z",
+        "is_producer": true,
+        "region": 1,
+        "datasource": null,
+        "distributors": [
+            5
+        ],
+        "labels": []
+    }
+},
+{
+    "model": "openfarms.produce",
+    "pk": 1,
+    "fields": {
+        "name": "Viande s\u00e8ch\u00e9e",
+        "about": "Viande s\u00e8ch\u00e9e de Boeuf",
+        "category": 5,
+        "is_fresh": false,
+        "is_glutenfree": true,
+        "is_dairyfree": true,
+        "is_nutsfree": true,
+        "is_vegan": false,
+        "price_quantity": "kg",
+        "price_chf_currency": "CHF",
+        "price_chf": "65.00",
+        "image": 11,
+        "labels": [],
+        "farms": [
+            1
+        ]
+    }
+},
+{
+    "model": "openfarms.produce",
+    "pk": 2,
+    "fields": {
+        "name": "Raclette lait cru",
+        "about": "Nature ou poivre vert",
+        "category": 6,
+        "is_fresh": false,
+        "is_glutenfree": true,
+        "is_dairyfree": false,
+        "is_nutsfree": true,
+        "is_vegan": false,
+        "price_quantity": "kg",
+        "price_chf_currency": "CHF",
+        "price_chf": "21.00",
+        "image": 7,
+        "labels": [],
+        "farms": [
+            1
+        ]
+    }
+},
+{
+    "model": "openfarms.produce",
+    "pk": 3,
+    "fields": {
+        "name": "Viande de Porc d'Alpage",
+        "about": "Cochons d'alpage engraiss\u00e9s gr\u00e2ce au petit-lait. Cette viande de porc pr\u00e9sente un profil tr\u00e8s aromatique et tendre",
+        "category": 7,
+        "is_fresh": true,
+        "is_glutenfree": true,
+        "is_dairyfree": false,
+        "is_nutsfree": true,
+        "is_vegan": true,
+        "price_quantity": "kg",
+        "price_chf_currency": "CHF",
+        "price_chf": "25.00",
+        "image": 6,
+        "labels": [
+            1
+        ],
+        "farms": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "openfarms.produce",
+    "pk": 4,
+    "fields": {
+        "name": "Viande d'agneau",
+        "about": "Agneaux nourris au lait de la m\u00e8re et \u00e0 l'herbe",
+        "category": 7,
+        "is_fresh": true,
+        "is_glutenfree": true,
+        "is_dairyfree": true,
+        "is_nutsfree": true,
+        "is_vegan": false,
+        "price_quantity": "kg",
+        "price_chf_currency": "CHF",
+        "price_chf": "18.00",
+        "image": 5,
+        "labels": [
+            4
+        ],
+        "farms": [
+            3
+        ]
+    }
+},
+{
+    "model": "openfarms.produce",
+    "pk": 5,
+    "fields": {
+        "name": "Panier fruits legumes",
+        "about": "",
+        "category": null,
+        "is_fresh": true,
+        "is_glutenfree": true,
+        "is_dairyfree": true,
+        "is_nutsfree": true,
+        "is_vegan": true,
+        "price_quantity": "b",
+        "price_chf_currency": "CHF",
+        "price_chf": "39.00",
+        "image": null,
+        "labels": [],
+        "farms": []
+    }
+},
+{
+    "model": "openfarms.produce",
+    "pk": 6,
+    "fields": {
+        "name": "Fromage de Ch\u00e8vre",
+        "about": "Dans le respect d\u2019un savoir et des traditions, Serge Kursner vous propose un panel de fromages de ch\u00e8vres les plus savoureux les uns que les autres.",
+        "category": 6,
+        "is_fresh": false,
+        "is_glutenfree": true,
+        "is_dairyfree": true,
+        "is_nutsfree": true,
+        "is_vegan": false,
+        "price_quantity": "kg",
+        "price_chf_currency": "CHF",
+        "price_chf": "30.00",
+        "image": 9,
+        "labels": [],
+        "farms": [
+            5
+        ]
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 1,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/FermeReymond.original.max-165x165.jpg",
+        "width": 165,
+        "height": 66,
+        "focal_point_key": "",
+        "image": 1
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 2,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/viandedeporc.max-165x165.jpg",
+        "width": 165,
+        "height": 110,
+        "focal_point_key": "",
+        "image": 2
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 3,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/alpage_la_petite_dent.max-165x165.jpg",
+        "width": 165,
+        "height": 92,
+        "focal_point_key": "",
+        "image": 3
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 4,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/ferme_de_Pre_Martin.max-165x165.jpg",
+        "width": 165,
+        "height": 163,
+        "focal_point_key": "",
+        "image": 4
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 5,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/viande_agneau.max-165x165.png",
+        "width": 165,
+        "height": 109,
+        "focal_point_key": "",
+        "image": 5
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 6,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/viande_porc.max-165x165.png",
+        "width": 165,
+        "height": 74,
+        "focal_point_key": "",
+        "image": 6
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 7,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/raclette.max-165x165.jpg",
+        "width": 165,
+        "height": 109,
+        "focal_point_key": "",
+        "image": 7
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 8,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/jardin_du_flon.max-165x165.png",
+        "width": 165,
+        "height": 100,
+        "focal_point_key": "",
+        "image": 8
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 9,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/FermeReymond.original.width-160.jpg",
+        "width": 160,
+        "height": 64,
+        "focal_point_key": "",
+        "image": 1
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 10,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/raclette.width-160.jpg",
+        "width": 160,
+        "height": 106,
+        "focal_point_key": "",
+        "image": 7
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 11,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/alpage_la_petite_dent.width-160.jpg",
+        "width": 160,
+        "height": 89,
+        "focal_point_key": "",
+        "image": 3
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 12,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/viande_porc.width-160.png",
+        "width": 160,
+        "height": 72,
+        "focal_point_key": "",
+        "image": 6
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 13,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/ferme_de_Pre_Martin.width-160.jpg",
+        "width": 160,
+        "height": 158,
+        "focal_point_key": "",
+        "image": 4
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 14,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/viande_agneau.width-160.png",
+        "width": 160,
+        "height": 106,
+        "focal_point_key": "",
+        "image": 5
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 15,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/jardin_du_flon.width-160.png",
+        "width": 160,
+        "height": 97,
+        "focal_point_key": "",
+        "image": 8
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 16,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/FermeReymond.original.width-800.jpg",
+        "width": 402,
+        "height": 161,
+        "focal_point_key": "",
+        "image": 1
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 17,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/fromage_profilwapps.max-165x165.jpg",
+        "width": 165,
+        "height": 165,
+        "focal_point_key": "",
+        "image": 9
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 18,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/funny_chevre.max-165x165.jpg",
+        "width": 165,
+        "height": 123,
+        "focal_point_key": "",
+        "image": 10
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 19,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/fromage_profilwapps.width-160.jpg",
+        "width": 160,
+        "height": 160,
+        "focal_point_key": "",
+        "image": 9
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 20,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/funny_chevre.width-160.jpg",
+        "width": 160,
+        "height": 120,
+        "focal_point_key": "",
+        "image": 10
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 21,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/viande_sechee.max-165x165.png",
+        "width": 165,
+        "height": 82,
+        "focal_point_key": "",
+        "image": 11
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 22,
+    "fields": {
+        "filter_spec": "width-160",
+        "file": "images/viande_sechee.width-160.png",
+        "width": 160,
+        "height": 80,
+        "focal_point_key": "",
+        "image": 11
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 23,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/viande_sechee.width-800.png",
+        "width": 318,
+        "height": 159,
+        "focal_point_key": "",
+        "image": 11
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 24,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/viande_agneau.width-800.png",
+        "width": 275,
+        "height": 183,
+        "focal_point_key": "",
+        "image": 5
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 25,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/ferme_de_Pre_Martin.width-800.jpg",
+        "width": 500,
+        "height": 496,
+        "focal_point_key": "",
+        "image": 4
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 26,
+    "fields": {
+        "filter_spec": "max-165x165",
+        "file": "images/paysage.max-165x165.jpg",
+        "width": 165,
+        "height": 109,
+        "focal_point_key": "",
+        "image": 12
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 27,
+    "fields": {
+        "filter_spec": "original",
+        "file": "images/paysage.original.jpg",
+        "width": 275,
+        "height": 183,
+        "focal_point_key": "",
+        "image": 12
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 28,
+    "fields": {
+        "filter_spec": "max-800x600",
+        "file": "images/paysage.max-800x600.jpg",
+        "width": 275,
+        "height": 183,
+        "focal_point_key": "",
+        "image": 12
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 29,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/raclette.width-800.jpg",
+        "width": 275,
+        "height": 183,
+        "focal_point_key": "",
+        "image": 7
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 30,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/viande_porc.width-800.png",
+        "width": 333,
+        "height": 151,
+        "focal_point_key": "",
+        "image": 6
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 31,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/alpage_la_petite_dent.width-800.jpg",
+        "width": 300,
+        "height": 168,
+        "focal_point_key": "",
+        "image": 3
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 32,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/jardin_du_flon.width-800.png",
+        "width": 629,
+        "height": 383,
+        "focal_point_key": "",
+        "image": 8
+    }
+},
+{
+    "model": "wagtailimages.rendition",
+    "pk": 33,
+    "fields": {
+        "filter_spec": "width-800",
+        "file": "images/funny_chevre.width-800.jpg",
+        "width": 800,
+        "height": 600,
+        "focal_point_key": "",
+        "image": 10
+    }
+},
+{
+    "model": "wagtailcore.site",
+    "pk": 2,
+    "fields": {
+        "hostname": "f.datalets.ch",
+        "port": 80,
+        "site_name": null,
+        "root_page": 3,
+        "is_default_site": true
+    }
+},
+{
+    "model": "wagtailcore.site",
+    "pk": 3,
+    "fields": {
+        "hostname": "Land2door.com",
+        "port": 80,
+        "site_name": null,
+        "root_page": 6,
+        "is_default_site": false
+    }
+},
+{
+    "model": "wagtailcore.collection",
+    "pk": 1,
+    "fields": {
+        "path": "0001",
+        "depth": 1,
+        "numchild": 0,
+        "name": "Root"
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "Moderators",
+        "permissions": [
+            [
+                "access_admin",
+                "wagtailadmin",
+                "admin"
+            ],
+            [
+                "add_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "change_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "delete_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "add_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "change_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "delete_image",
+                "wagtailimages",
+                "image"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "Editors",
+        "permissions": [
+            [
+                "access_admin",
+                "wagtailadmin",
+                "admin"
+            ],
+            [
+                "add_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "change_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "delete_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "add_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "change_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "delete_image",
+                "wagtailimages",
+                "image"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$bZV4LizxValo$4yt3AwfffTEX7q7sHz7yFClRhF/xX9F6k3/U8fXE4HY=",
+        "last_login": "2018-01-27T10:16:17.077Z",
+        "is_superuser": true,
+        "username": "oleg",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-07-21T10:02:16.117Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$OYkXcHSnDB7I$TnsIiIktqykxsXsptvoOsV2Cie1LQpkVWH0CJmv4pZI=",
+        "last_login": "2017-09-11T08:49:06.812Z",
+        "is_superuser": true,
+        "username": "aurelie",
+        "first_name": "Aurelie",
+        "last_name": "Besson",
+        "email": "aurelie.besson@icloud.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-21T10:03:10.633Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$t2HqRqbMjk9m$FyIgjvPXwxEWYNQYy6Du+DXXspOckPwHjPctrci2BOY=",
+        "last_login": "2018-01-27T13:39:57.803Z",
+        "is_superuser": false,
+        "username": "demo",
+        "first_name": "Demo",
+        "last_name": "User",
+        "email": "demo@datalets.ch",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-01-27T10:16:38.296Z",
+        "groups": [
+            [
+                "Moderators"
+            ],
+            [
+                "Editors"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 1,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "add"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 2,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "edit"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 3,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "publish"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 4,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "page": 1,
+        "permission_type": "add"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 5,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "page": 1,
+        "permission_type": "edit"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 6,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "lock"
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 1,
+    "fields": {
+        "path": "0001",
+        "depth": 1,
+        "numchild": 2,
+        "title": "Root",
+        "draft_title": "Root",
+        "slug": "root",
+        "content_type": [
+            "wagtailcore",
+            "page"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/",
+        "owner": null,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "first_published_at": null,
+        "last_published_at": null,
+        "latest_revision_created_at": null,
+        "live_revision": null
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 3,
+    "fields": {
+        "path": "00010001",
+        "depth": 2,
+        "numchild": 1,
+        "title": "Bienvenue",
+        "draft_title": "Bienvenue",
+        "slug": "bienvenue",
+        "content_type": [
+            "home",
+            "articlepage"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/bienvenue/",
+        "owner": [
+            "oleg"
+        ],
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "first_published_at": "2017-07-24T13:31:28.837Z",
+        "last_published_at": "2017-07-24T13:31:28.837Z",
+        "latest_revision_created_at": "2017-07-24T13:31:28.817Z",
+        "live_revision": 1
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 4,
+    "fields": {
+        "path": "000100010001",
+        "depth": 3,
+        "numchild": 1,
+        "title": "Forms",
+        "draft_title": "Forms",
+        "slug": "forms",
+        "content_type": [
+            "home",
+            "articleindexpage"
+        ],
+        "live": true,
+        "has_unpublished_changes": true,
+        "url_path": "/bienvenue/forms/",
+        "owner": [
+            "oleg"
+        ],
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "first_published_at": "2017-07-28T07:51:33.293Z",
+        "last_published_at": "2017-07-28T07:51:33.293Z",
+        "latest_revision_created_at": "2017-08-23T20:33:49.771Z",
+        "live_revision": 3
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 5,
+    "fields": {
+        "path": "0001000100010001",
+        "depth": 4,
+        "numchild": 0,
+        "title": "Add farm",
+        "draft_title": "Add farm",
+        "slug": "add-farm",
+        "content_type": [
+            "home",
+            "contactform"
+        ],
+        "live": true,
+        "has_unpublished_changes": true,
+        "url_path": "/bienvenue/forms/add-farm/",
+        "owner": [
+            "oleg"
+        ],
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "first_published_at": "2017-07-28T07:51:48.406Z",
+        "last_published_at": "2017-08-21T15:09:08.167Z",
+        "latest_revision_created_at": "2017-08-23T21:28:53.081Z",
+        "live_revision": 8
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 6,
+    "fields": {
+        "path": "00010002",
+        "depth": 2,
+        "numchild": 0,
+        "title": "Land2door",
+        "draft_title": "Land2door",
+        "slug": "home",
+        "content_type": [
+            "home",
+            "articlepage"
+        ],
+        "live": true,
+        "has_unpublished_changes": true,
+        "url_path": "/home/",
+        "owner": [
+            "oleg"
+        ],
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "first_published_at": "2017-08-17T14:48:51.600Z",
+        "last_published_at": "2017-08-17T14:48:51.600Z",
+        "latest_revision_created_at": "2017-08-24T16:37:47.385Z",
+        "live_revision": 5
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 1,
+    "fields": {
+        "collection": 1,
+        "title": "Ferme Reymond",
+        "file": "original_images/FermeReymond.original.jpg",
+        "width": 402,
+        "height": 161,
+        "created_at": "2017-07-21T10:03:24.453Z",
+        "uploaded_by_user": [
+            "oleg"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 2,
+    "fields": {
+        "collection": 1,
+        "title": "Viande de Porc",
+        "file": "original_images/viandedeporc.jpg",
+        "width": 930,
+        "height": 620,
+        "created_at": "2017-07-23T09:48:29.665Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 3,
+    "fields": {
+        "collection": 1,
+        "title": "Alpage la petite dent",
+        "file": "original_images/alpage_la_petite_dent.jpg",
+        "width": 300,
+        "height": 168,
+        "created_at": "2017-07-23T11:59:55.862Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 4,
+    "fields": {
+        "collection": 1,
+        "title": "Ferme de Pr\u00e9 Martin",
+        "file": "original_images/ferme_de_Pre_Martin.jpg",
+        "width": 500,
+        "height": 496,
+        "created_at": "2017-07-23T12:15:20.862Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 5,
+    "fields": {
+        "collection": 1,
+        "title": "Viande d'agneau",
+        "file": "original_images/viande_agneau.png",
+        "width": 275,
+        "height": 183,
+        "created_at": "2017-07-23T13:05:47.226Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 6,
+    "fields": {
+        "collection": 1,
+        "title": "Viande de Porc",
+        "file": "original_images/viande_porc.png",
+        "width": 333,
+        "height": 151,
+        "created_at": "2017-07-23T13:09:29.585Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 7,
+    "fields": {
+        "collection": 1,
+        "title": "Raclette lait cru",
+        "file": "original_images/raclette.jpg",
+        "width": 275,
+        "height": 183,
+        "created_at": "2017-07-23T13:13:22.278Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 8,
+    "fields": {
+        "collection": 1,
+        "title": "Les Jardins du Flon",
+        "file": "original_images/jardin_du_flon.png",
+        "width": 629,
+        "height": 383,
+        "created_at": "2017-07-23T13:28:01.570Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 9,
+    "fields": {
+        "collection": 1,
+        "title": "Fromage de ch\u00e8vre",
+        "file": "original_images/fromage_profilwapps.jpg",
+        "width": 640,
+        "height": 640,
+        "created_at": "2017-07-25T13:41:50.290Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 10,
+    "fields": {
+        "collection": 1,
+        "title": "Domaine de la Rapille",
+        "file": "original_images/funny_chevre.jpg",
+        "width": 1600,
+        "height": 1200,
+        "created_at": "2017-07-25T13:48:26.473Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": null
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 11,
+    "fields": {
+        "collection": 1,
+        "title": "viande s\u00e8ch\u00e9e.png",
+        "file": "original_images/viande_sechee.png",
+        "width": 318,
+        "height": 159,
+        "created_at": "2017-07-27T13:33:02.306Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": 106732
+    }
+},
+{
+    "model": "wagtailimages.image",
+    "pk": 12,
+    "fields": {
+        "collection": 1,
+        "title": "paysage",
+        "file": "original_images/paysage.jpg",
+        "width": 275,
+        "height": 183,
+        "created_at": "2017-08-23T21:40:58.333Z",
+        "uploaded_by_user": [
+            "aurelie"
+        ],
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "focal_point_width": null,
+        "focal_point_height": null,
+        "file_size": 13195
+    }
+},
+{
+    "model": "home.articlepage",
+    "pk": 3,
+    "fields": {
+        "intro": "<p>A few words of introduction to this OpenFarm demo</p>",
+        "body": "<p>Let's build a collaborative database that maps local food producers and allows them to reach new consumers.\u00a0The project aims at building a comprehensive database regrouping information about local food producers in order to promote local consumption and short distribution channels.</p>",
+        "is_featured": false,
+        "feed_image": null
+    }
+},
+{
+    "model": "home.articlepage",
+    "pk": 6,
+    "fields": {
+        "intro": "",
+        "body": "",
+        "is_featured": false,
+        "feed_image": null
+    }
+},
+{
+    "model": "home.articleindexpage",
+    "pk": 4,
+    "fields": {
+        "intro": "",
+        "feed_image": null
+    }
+},
+{
+    "model": "home.contactform",
+    "pk": 5,
+    "fields": {
+        "to_address": "",
+        "from_address": "",
+        "subject": "",
+        "intro": "<p>Some introductory text ...</p>",
+        "thanks": "<p>Merci beaucoup!</p>"
+    }
+}
+]
