@@ -18,7 +18,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'blemmy-dev',
+        'NAME': 'blemmy-dev.sqlite3',
     }
 }
 
