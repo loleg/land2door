@@ -17,14 +17,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blemmy',
-        'USER': 'blemmy',
-        'PASSWORD': 'blemmy',
-        'HOST': 'postgres',
-        'PORT': '5432',
-
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'blemmy-dev',
+    }
 }
 
 
