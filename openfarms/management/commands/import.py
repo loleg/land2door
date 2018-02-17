@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 import json, yaml
+import re
 
 from django.core.management.base import BaseCommand, CommandError
 
-from openfarms.models import Farm
+from openfarms.models import Farm, Datasource
+
+def cleanhtml(raw_html):
+    cleanr = re.compile('<.*?>')
+    cleantext = re.sub(cleanr, '', raw_html)
+    return cleantext
 
 class Command(BaseCommand):
     help = 'Imports JSON data with schema conversion specified in YAML'
@@ -23,6 +29,15 @@ class Command(BaseCommand):
 
         count = 0
         for jsonfile in options['jsonfiles']:
+
+            source = Datasource.objects.get_or_create(
+                feed=jsonfile
+            )
+            if not type(source) is Datasource:
+                source = source[0]
+            else:
+                source.title=jsonfile
+
             with open(jsonfile, 'r') as f:
                 data = json.load(f)
 
@@ -36,7 +51,8 @@ class Command(BaseCommand):
                         vals = []
                         for k in conf[local].split(" "):
                             if k in d:
-                                vals.append(d[k])
+                                v = cleanhtml(d[k])
+                                vals.append(v)
                             else:
                                 k = k.replace("_", " ")
                                 vals.append(k)
@@ -46,6 +62,7 @@ class Command(BaseCommand):
                         else:
                             farm.__setattr__(local, contents)
 
+                    farm.datasource = source
                     farm.save()
                     print(farm.title)
                     count += 1
