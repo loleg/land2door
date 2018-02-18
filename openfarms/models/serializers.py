@@ -52,6 +52,8 @@ class RegionRenditionField(Field):
     def get_attribute(self, instance):
         return instance
     def to_representation(self, farm):
+        if farm.region is None:
+            return OrderedDict([])
         return OrderedDict([
             ('title', farm.region.title),
             ('imageurl', farm.region.imageurl),

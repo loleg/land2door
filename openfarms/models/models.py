@@ -17,9 +17,9 @@ from djmoney.models.fields import MoneyField
 from .serializers import ProduceRenditionField, LabelRenditionField, RegionRenditionField
 
 class Datasource(models.Model):
-    title = models.CharField(max_length=255)
-    homepage = models.URLField()
-    feed = models.URLField(blank=True)
+    title = models.CharField(max_length=255, unique=True)
+    feed = models.CharField(max_length=255, blank=True)
+    homepage = models.URLField(blank=True)
     notes = models.TextField(blank=True)
     api_fields = [
         'title', 'homepage', 'feed', 'notes'
@@ -208,19 +208,19 @@ class Produce(models.Model):
     category = models.ForeignKey(Category,
         null=True, blank=True, on_delete=models.PROTECT)
 
-    is_fresh = models.BooleanField(default=True,
+    is_fresh = models.BooleanField(default=False,
         verbose_name='Fresh',
         help_text=_('This is a fresh product (i.e. unprocessed).'))
-    is_glutenfree = models.BooleanField(default=True,
+    is_glutenfree = models.BooleanField(default=False,
         verbose_name='Gluten-free',
         help_text=_('Check if this product is free of gluten.'))
-    is_dairyfree = models.BooleanField(default=True,
+    is_dairyfree = models.BooleanField(default=False,
         verbose_name='Dairy-free',
         help_text=_('Milk is not part of this produce.'))
-    is_nutsfree = models.BooleanField(default=True,
+    is_nutsfree = models.BooleanField(default=False,
         verbose_name='Nut-free',
         help_text=_('Nuts are not part of this produce.'))
-    is_vegan = models.BooleanField(default=True,
+    is_vegan = models.BooleanField(default=False,
         verbose_name='Vegan',
         help_text=_('This is not an animal product.'))
 
