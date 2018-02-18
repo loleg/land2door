@@ -17,9 +17,9 @@ from djmoney.models.fields import MoneyField
 from .serializers import ProduceRenditionField, LabelRenditionField, RegionRenditionField
 
 class Datasource(models.Model):
-    title = models.CharField(max_length=255)
-    homepage = models.URLField()
-    feed = models.URLField(blank=True)
+    title = models.CharField(max_length=255, unique=True)
+    feed = models.CharField(max_length=255, blank=True)
+    homepage = models.URLField(blank=True)
     notes = models.TextField(blank=True)
     api_fields = [
         'title', 'homepage', 'feed', 'notes'

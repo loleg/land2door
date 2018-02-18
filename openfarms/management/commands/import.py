@@ -4,7 +4,7 @@ import re
 
 from django.core.management.base import BaseCommand, CommandError
 
-from openfarms.models import Farm, Datasource, Produce
+from openfarms.models import Farm, Datasource, Produce, Category
 from ..categoryimport import import_category_mappers, get_category_match
 
 def cleanhtml(raw_html):
@@ -35,35 +35,40 @@ class Command(BaseCommand):
 
         count = 0
         for jsonfile in options['jsonfiles']:
-
-            source = Datasource.objects.get_or_create(
-                feed=jsonfile
-            )
-            if not type(source) is Datasource:
-                source = source[0]
-            else:
-                source.title=jsonfile
-
             with open(jsonfile, 'r') as f:
                 data = json.load(f)
                 datacount = len(data)
                 producecount = 0
 
+                if 'DATASOURCE' in conf:
+                    source, created = Datasource.objects.get_or_create(
+                        title=conf['DATASOURCE']['title']
+                    )
+                    source.homepage = conf['DATASOURCE']['homepage']
+                    del(conf['DATASOURCE'])
+                else:
+                    source, created = Datasource.objects.get_or_create(
+                        title=jsonfile.rstrip(".json")
+                    )
+                source.feed = jsonfile
+                source.save()
+
                 for i, d in enumerate(data):
                     farmtitle = d[conf['title']]
                     if len(farmtitle) < 3:
                         continue
-                    farm = Farm.objects.get_or_create(
+                    farm, created = Farm.objects.get_or_create(
                         title=farmtitle
                     )
-                    if not type(farm) is Farm:
-                        farm = farm[0]
+                    farm.datasource = source
+
                     producelist = []
                     for local in conf:
+                        if local == "title": continue
                         contents = ""
-                        for k in conf[local].split(" "):
+                        for k in conf[local]:
                             if k in d:
-                                if type(d[k]) is None:
+                                if d[k] is None:
                                     contents = ""
                                 elif type(d[k]) is str:
                                     v = cleanhtml(d[k])
@@ -88,42 +93,50 @@ class Command(BaseCommand):
                             self.stdout.write(self.style.WARNING('Image fields not supported'))
 
                         elif local == "produce":
-                            # print("\n{}#{}#{}".format(line.strip(),'|'.join(map(lambda c: ';'.join(list(c)), matching_cat)),highest_match))
                             contents = []
-                            for k in conf[local].split(" "):
+                            for k in conf[local]:
                                 if not k in d:
                                     contents.append(k)
-                                elif type(d[k]) is str:
+                                elif type(d[k]) is str and len(d[k])>2:
                                     kv = d[k].replace("||",",").replace("|",",")
-                                    contents.append(kv)
-                            contents = ",".join(contents)
-                            for c in contents.split(","):
+                                    for kval in kv.split(","):
+                                        contents.append(kval)
+
+                            for c in contents:
+                                c = ''.join(line.strip() for line in c.splitlines(True))
                                 c = c.strip()
-                                matching_cat, highest_match = get_category_match(c.strip(), categories, food_map)
+                                if len(c)<3: continue
+
+                                # Add to produce
+                                produce, created = Produce.objects.get_or_create(
+                                    name=c
+                                )
+                                produce.save()
+                                # print("["+produce.name+"]")
+                                producelist.append(produce)
+
+                                matching_cat, highest_match = get_category_match(
+                                    produce.name, categories, food_map
+                                )
+
                                 if len(matching_cat)<3:
                                     # First language (German)
                                     matching_cat = next(iter(next(iter(matching_cat))))
-                                    producename = matching_cat.split('/')[0]
-                                    produce = Produce.objects.get_or_create(
-                                        name=producename
+                                    cat, created = Category.objects.get_or_create(
+                                        title=matching_cat.split('/')[0]
                                     )
-                                    if not type(produce) is Produce:
-                                        produce = produce[0]
-                                    produce.save()
-                                    # print(producename)
-                                    producelist.append(produce)
+                                    produce.category = cat
+                                    # print("Category: " + cat.title)
+
                         else:
                             farm.__setattr__(local, contents)
-
-                    farm.datasource = source
-                    farm.save()
 
                     for p in producelist:
                         farm.produce.add(p)
                     producecount = producecount + len(producelist)
                     farm.save()
 
-                    print("%d/%d - %s" % (i, datacount, farm.title))
+                    print("%d/%d - %s" % (i+1, datacount, farm.title))
                     count += 1
 
         self.stdout.write(self.style.SUCCESS('Imported %d produce' % producecount))
