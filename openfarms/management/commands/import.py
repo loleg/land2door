@@ -50,8 +50,11 @@ class Command(BaseCommand):
                 producecount = 0
 
                 for i, d in enumerate(data):
+                    farmtitle = d[conf['title']]
+                    if len(farmtitle) < 3:
+                        continue
                     farm = Farm.objects.get_or_create(
-                        title=d[conf['title']]
+                        title=farmtitle
                     )
                     if not type(farm) is Farm:
                         farm = farm[0]
