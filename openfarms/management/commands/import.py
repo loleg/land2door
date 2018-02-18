@@ -4,9 +4,11 @@ import re
 
 from django.core.management.base import BaseCommand, CommandError
 
-from openfarms.models import Farm, Datasource
+from openfarms.models import Farm, Datasource, Produce
+from ..categoryimport import import_category_mappers, get_category_match
 
 def cleanhtml(raw_html):
+    if not type(raw_html) is str: return raw_html
     cleanr = re.compile('<.*?>')
     cleantext = re.sub(cleanr, '', raw_html)
     return cleantext
@@ -26,6 +28,10 @@ class Command(BaseCommand):
         else:
             with open(options['yamlfile'], 'r') as f:
                 conf = yaml.load(f)
+
+        # hard coded hacky hacky
+        filename = 'openfarms/data/generic-foods.csv'
+        categories, food_map = import_category_mappers(filename)
 
         count = 0
         for jsonfile in options['jsonfiles']:
@@ -47,23 +53,65 @@ class Command(BaseCommand):
                     )
                     if not type(farm) is Farm:
                         farm = farm[0]
+                    producelist = []
                     for local in conf:
-                        vals = []
+                        contents = ""
                         for k in conf[local].split(" "):
                             if k in d:
-                                v = cleanhtml(d[k])
-                                vals.append(v)
+                                if type(d[k]) is None:
+                                    contents = ""
+                                elif type(d[k]) is str:
+                                    v = cleanhtml(d[k])
+                                    if contents is None:
+                                        contents = ""
+                                    contents = contents + v
+                                else:
+                                    contents = d[k]
                             else:
                                 k = k.replace("_", " ")
-                                vals.append(k)
-                        contents = "".join(vals)
-                        if local == "image":
+                                contents = contents + k
+
+                        if contents is None:
+                            pass
+
+                        elif local == "image":
                             self.stdout.write(self.style.WARNING('Image fields not supported'))
+
+                        elif local == "produce":
+                            # print("\n{}#{}#{}".format(line.strip(),'|'.join(map(lambda c: ';'.join(list(c)), matching_cat)),highest_match))
+                            contents = []
+                            for k in conf[local].split(" "):
+                                if type(d[k]) is str:
+                                    kv = d[k].replace("||",",").replace("|",",")
+                                    contents.append(kv)
+                            contents = ",".join(contents)
+                            for c in contents.split(","):
+                                c = c.strip()
+                                matching_cat, highest_match = get_category_match(c.strip(), categories, food_map)
+                                if len(matching_cat)<3:
+                                    # First language (German)
+                                    matching_cat = next(iter(next(iter(matching_cat))))
+                                    producename = matching_cat.split('/')[0]
+                                    produce = Produce.objects.get_or_create(
+                                        name=producename
+                                    )
+                                    if not type(produce) is Produce:
+                                        produce = produce[0]
+                                    produce.save()
+                                    print(producename)
+                                    producelist.append(produce)
                         else:
                             farm.__setattr__(local, contents)
 
                     farm.datasource = source
                     farm.save()
+
+                    for p in producelist:
+                        farm.produce.add(p)
+                    if len(producelist)>0:
+                        self.stdout.write(self.style.SUCCESS('Imported %d produce' % len(producelist)))
+                    farm.save()
+
                     print(farm.title)
                     count += 1
 

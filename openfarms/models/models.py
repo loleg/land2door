@@ -208,19 +208,19 @@ class Produce(models.Model):
     category = models.ForeignKey(Category,
         null=True, blank=True, on_delete=models.PROTECT)
 
-    is_fresh = models.BooleanField(default=True,
+    is_fresh = models.BooleanField(default=False,
         verbose_name='Fresh',
         help_text=_('This is a fresh product (i.e. unprocessed).'))
-    is_glutenfree = models.BooleanField(default=True,
+    is_glutenfree = models.BooleanField(default=False,
         verbose_name='Gluten-free',
         help_text=_('Check if this product is free of gluten.'))
-    is_dairyfree = models.BooleanField(default=True,
+    is_dairyfree = models.BooleanField(default=False,
         verbose_name='Dairy-free',
         help_text=_('Milk is not part of this produce.'))
-    is_nutsfree = models.BooleanField(default=True,
+    is_nutsfree = models.BooleanField(default=False,
         verbose_name='Nut-free',
         help_text=_('Nuts are not part of this produce.'))
-    is_vegan = models.BooleanField(default=True,
+    is_vegan = models.BooleanField(default=False,
         verbose_name='Vegan',
         help_text=_('This is not an animal product.'))
 

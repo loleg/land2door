@@ -1,11 +1,15 @@
 # Updated: 17.2.2018
 
+# OpenFarms importer
+fuzzywuzzy==0.16.0
+python-Levenshtein==0.12.0
+
 # Core
 wagtail==1.13.1
 Django==1.11.5
 
 # Database
-psycopg2==2.7.4
+psycopg2-binary==2.7.4
 dj-database-url==0.4.2
 
 # Addons
