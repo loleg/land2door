@@ -46,8 +46,10 @@ class Command(BaseCommand):
 
             with open(jsonfile, 'r') as f:
                 data = json.load(f)
+                datacount = len(data)
+                producecount = 0
 
-                for d in data:
+                for i, d in enumerate(data):
                     farm = Farm.objects.get_or_create(
                         title=d[conf['title']]
                     )
@@ -74,6 +76,11 @@ class Command(BaseCommand):
                         if contents is None:
                             pass
 
+                        elif local == "latitude" and "," in contents:
+                            latlng = contents.split(",")
+                            farm.latitude = latlng[0].strip()
+                            farm.longitude = latlng[1].strip()
+
                         elif local == "image":
                             self.stdout.write(self.style.WARNING('Image fields not supported'))
 
@@ -81,7 +88,9 @@ class Command(BaseCommand):
                             # print("\n{}#{}#{}".format(line.strip(),'|'.join(map(lambda c: ';'.join(list(c)), matching_cat)),highest_match))
                             contents = []
                             for k in conf[local].split(" "):
-                                if type(d[k]) is str:
+                                if not k in d:
+                                    contents.append(k)
+                                elif type(d[k]) is str:
                                     kv = d[k].replace("||",",").replace("|",",")
                                     contents.append(kv)
                             contents = ",".join(contents)
@@ -98,7 +107,7 @@ class Command(BaseCommand):
                                     if not type(produce) is Produce:
                                         produce = produce[0]
                                     produce.save()
-                                    print(producename)
+                                    # print(producename)
                                     producelist.append(produce)
                         else:
                             farm.__setattr__(local, contents)
@@ -108,11 +117,11 @@ class Command(BaseCommand):
 
                     for p in producelist:
                         farm.produce.add(p)
-                    if len(producelist)>0:
-                        self.stdout.write(self.style.SUCCESS('Imported %d produce' % len(producelist)))
+                    producecount = producecount + len(producelist)
                     farm.save()
 
-                    print(farm.title)
+                    print("%d/%d - %s" % (i, datacount, farm.title))
                     count += 1
 
+        self.stdout.write(self.style.SUCCESS('Imported %d produce' % producecount))
         self.stdout.write(self.style.SUCCESS('Imported %d farms' % count))
